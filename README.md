@@ -1,4 +1,4 @@
-<div align="center"><img src="https://raw.githubusercontent.com/mweagle/SpartaHugo/master/site/screenshot.png" />
+<div align="center"><img src="https://raw.githubusercontent.com/mweagle/SpartaHugo/master/screenshot.png" />
 </div>
 
 # SpartaHugo
