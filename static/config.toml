@@ -1,0 +1,38 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "Sparta & Hugo"
+theme = "hugo-steam-theme"
+disqusShortname = ""
+paginate = 10
+
+[params]
+
+	title = "Sparta & Hugo"
+	subtitle = "Sparta, Hugo & AWS Lambda Integration"
+	copyright = "Released under the MIT license."
+
+	# You can choose between green, orange, red and blue.
+	themeColor = "red"
+	# Enable Google Analytics be inserting your tracking code
+	googleAnalytics = ""
+
+	# To provide some metadata for search engines and the about section in the footer
+	# feel free to add a few information about you and your website.
+	name = "Matt Weagle"
+	bio = "Check the source on [GitHub](//github.com/mweagle/SpartaHugo) from Github."
+	description = "Sparta (http://gosparta.io) and Hugo (http://gohugo.io) integration"
+	location = "" # optional
+	twitter = "mweagle" # optional
+	github = "mweagle" # optional
+
+	# Enable a comment system
+	# You can choose between Disqus or Google Plus by setting comments
+	# to disqus or googleplus. For using Disqus you need to enter your
+	# shortname in disqusShortname at the top of the configs.
+	comments = ""
+
+	# Customize or translate the strings
+	keepReadingStr = "Keep reading"
+	backtotopStr = "Back to top"
+	shareStr = "Share"
+	pageNotFoundTitle = "404 - Page not found"
