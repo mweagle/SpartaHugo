@@ -26,6 +26,9 @@ get: clean ensure_vendor
 	git clone --depth=1 https://github.com/crewjam/go-cloudformation ./vendor/github.com/crewjam/go-cloudformation
 	rm -rf ./src/main/vendor/github.com/crewjam/go-cloudformation/.git
 
+build: get format vet generate
+	go build .
+
 test: build
 	go test ./test/...
 
