@@ -34,7 +34,6 @@ func spartaLambdaFunctions(api *sparta.API) []*sparta.LambdaAWSInfo {
 			panic("Failed to create /hello resource")
 		}
 	}
-
 	return append(lambdaFunctions, lambdaFn)
 }
 
