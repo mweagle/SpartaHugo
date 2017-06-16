@@ -10,6 +10,7 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	sparta "github.com/mweagle/Sparta"
+	spartaCF "github.com/mweagle/Sparta/aws/cloudformation"
 )
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,7 +51,8 @@ func main() {
 	s3Site, _ := sparta.NewS3Site("./static/public")
 
 	// Deploy it
-	sparta.Main("SpartaHugo",
+	stackName := spartaCF.UserScopedStackName("SpartaHugo")
+	sparta.Main(stackName,
 		fmt.Sprintf("Sparta app that provisions a CORS-enabled API Gateway together with an S3 site built by Hugo (http://gohugo.io)"),
 		spartaLambdaFunctions(apiGateway),
 		apiGateway,
