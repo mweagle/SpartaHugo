@@ -4,11 +4,10 @@ package main
 //go:generate hugo --source ./static
 
 import (
-	"encoding/json"
+	"context"
 	"fmt"
 	"net/http"
 
-	"github.com/Sirupsen/logrus"
 	sparta "github.com/mweagle/Sparta"
 	spartaCF "github.com/mweagle/Sparta/aws/cloudformation"
 )
@@ -16,24 +15,27 @@ import (
 ////////////////////////////////////////////////////////////////////////////////
 // Hello world event handler
 //
-func helloWorld(event *json.RawMessage,
-	context *sparta.LambdaContext,
-	w http.ResponseWriter,
-	logger *logrus.Logger) {
-	logger.Info("Hello World: ", string(*event))
-	fmt.Fprint(w, string(*event))
+func helloWorld(ctx context.Context, event map[string]interface{}) (interface{}, error) {
+	response := map[string]interface{}{
+		"Message": "Hello World",
+		"Event":   event,
+	}
+	return response, nil
 }
 
 func spartaLambdaFunctions(api *sparta.API) []*sparta.LambdaAWSInfo {
 	var lambdaFunctions []*sparta.LambdaAWSInfo
-	lambdaFn := sparta.NewLambda(sparta.IAMRoleDefinition{}, helloWorld, nil)
+	lambdaFn := sparta.HandleAWSLambda("Hello World",
+		helloWorld,
+		sparta.IAMRoleDefinition{})
 
 	if nil != api {
 		apiGatewayResource, _ := api.NewResource("/hello", lambdaFn)
-		_, err := apiGatewayResource.NewMethod("GET", http.StatusOK)
-		if nil != err {
+		method, methodErr := apiGatewayResource.NewMethod("GET", http.StatusOK, http.StatusOK)
+		if methodErr != nil {
 			panic("Failed to create /hello resource")
 		}
+		method.SupportedRequestContentTypes = []string{"application/json"}
 	}
 	return append(lambdaFunctions, lambdaFn)
 }

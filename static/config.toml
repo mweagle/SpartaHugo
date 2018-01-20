@@ -1,38 +1,37 @@
-baseurl = "/"
-languageCode = "en-us"
-title = "Sparta & Hugo"
-theme = "hugo-steam-theme"
-disqusShortname = ""
-paginate = 10
+# Main config file for icon theme.
+theme = "hugo-icon"
+baseURL = "/"
+languageCode = "en-US"
+title = "Sparta and Hugo"
 
+# Metadata
 [params]
+  author = "Matt Weagle"
+  description = "Introduction to Sparta"
 
-	title = "Sparta & Hugo"
-	subtitle = "Sparta, Hugo & AWS Lambda Integration"
-	copyright = "Released under the MIT license."
+# Hero section (from here on is for icon theme)
+[params.hero]
+  img = "images/hero_bg.jpg"
+  title = "Deploy [Hugo](https://github.com/mweagle/Sparta) websites with Sparta"
+  description = "Visit the [documentation](http://gosparta.io/) for more information"
 
-	# You can choose between green, orange, red and blue.
-	themeColor = "red"
-	# Enable Google Analytics be inserting your tracking code
-	googleAnalytics = ""
+# Navigation section
+[params.nav]
+  mission = "Our Mission"
+  services = "Services"
+  team = "The Team"
+  contact = "Get In Touch"
+  # Include logo instead if HOME:
+  # logo = "path/to/logo"
 
-	# To provide some metadata for search engines and the about section in the footer
-	# feel free to add a few information about you and your website.
-	name = "Matt Weagle"
-	bio = "Check the source on [GitHub](//github.com/mweagle/SpartaHugo) from Github."
-	description = "Sparta (http://gosparta.io) and Hugo (http://gohugo.io) integration"
-	location = "" # optional
-	twitter = "mweagle" # optional
-	github = "mweagle" # optional
-
-	# Enable a comment system
-	# You can choose between Disqus or Google Plus by setting comments
-	# to disqus or googleplus. For using Disqus you need to enter your
-	# shortname in disqusShortname at the top of the configs.
-	comments = ""
-
-	# Customize or translate the strings
-	keepReadingStr = "Keep reading"
-	backtotopStr = "Back to top"
-	shareStr = "Share"
-	pageNotFoundTitle = "404 - Page not found"
+# Footer section
+# Note here that the copyright and attribution statement must remain as part of the license agreement. If you wish to remove this, please contact freehtml5 and pay for a professional license.
+[params.footer]
+  enable = true
+  note = "<p><small>&copy; 2016 Free HTML5 Template. All Rights Reserved. <br> Designed by <a href='http://freehtml5.co/' target='_blank'>FreeHTML5.co</a> Demo Images: <a href='http://pexels.com/' target='_blank'>Pexels</a><br>Hugo port by <a href='https://github.com/SteveLane/' target='_blank'>SteveLane</a></small></p>"
+  github = "https://github.com/mweagle/Sparta"
+  twitter = "https://twitter.com/@mweagle"
+  #facebook = "#"
+  #vine = "#"
+  #linkedin = "#"
+  #instagram = "#"
